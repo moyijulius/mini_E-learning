@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo" onclick="app.showPage('home')">📚 LearnHub</div>
+            
+            <div class="hamburger" onclick="app.toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <nav id="nav">
+                <ul>
+                    <li><a href="#" onclick="app.showPage('home'); return false;">Home</a></li>
+                    <li class="auth-buttons">
+                        <span class="user-welcome" id="userWelcome" style="display: none;"></span>
+                        <button class="btn-login" id="btnLogin" onclick="app.showModal('login')">Login</button>
+                        <button class="btn-signup" id="btnSignup" onclick="app.showModal('signup')">Sign Up</button>
+                        <button class="btn-logout" id="btnLogout" onclick="app.logout()" style="display: none;">Logout</button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Home Page -->
+        <div id="homePage" class="page active">
+            <h1>Available Courses</h1>
+            <div class="courses-grid" id="coursesGrid"></div>
+        </div>
+
+        <!-- Course Detail Page -->
+        <div id="courseDetailPage" class="page">
+            <button class="btn-back" onclick="app.showPage('home')">← Back to Courses</button>
+            <div class="course-header" id="courseHeader"></div>
+            <div class="lessons-container" id="lessonsContainer"></div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginUsername">Username</label>
+                    <input type="text" id="loginUsername" required>
+                    <div class="error-message" id="loginUsernameError"></div>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" required>
+                    <div class="error-message" id="loginPasswordError"></div>
+                </div>
+                <button type="submit" class="btn-submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div class="modal" id="signupModal">
+        <div class="modal-content">
+            <h2>Sign Up</h2>
+            <form id="signupForm">
+                <div class="form-group">
+                    <label for="signupUsername">Username</label>
+                    <input type="text" id="signupUsername" required>
+                    <div class="error-message" id="signupUsernameError"></div>
+                </div>
+                <div class="form-group">
+                    <label for="signupEmail">Email</label>
+                    <input type="email" id="signupEmail" required>
+                    <div class="error-message" id="signupEmailError"></div>
+                </div>
+                <div class="form-group">
+                    <label for="signupPassword">Password</label>
+                    <input type="password" id="signupPassword" required>
+                    <div class="error-message" id="signupPasswordError"></div>
+                </div>
+                <button type="submit" class="btn-submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+    
+   
